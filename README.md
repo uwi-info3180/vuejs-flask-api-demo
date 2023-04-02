@@ -30,11 +30,12 @@ npm run build
 
 ## Start Flask API
 
-Remember to always create a virtual environment and install the packages in your requirements file
+Remember to always create a virtual environment and install the packages in your requirements file. This demo also needs a PostgreSQL database to be setup. Ensure you rename the `.env.sample` file to `.env` and update the configuration as needed so you can connect to your local database.
 
 ```bash
 $ python -m venv venv (you may need to use python3 instead)
 $ source venv/bin/activate (or .\venv\Scripts\activate on Windows)
 $ pip install -r requirements.txt
-$ python run.py
+$ flask db migrate
+$ flask --app app --debug run
 ```
